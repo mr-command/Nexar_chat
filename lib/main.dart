@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:get/get.dart';
 // import 'package:nexar_platform/screens/HomeScreen.dart';
 import 'package:nexar_platform/screens/LoginScreen.dart';
+import 'package:nexar_platform/screens/SignupScreen.dart';
 
 void main() {
   runApp(
-    ProviderScope(
-      child: MyApp()
-      )
+
+      MyApp()
+      
     );
 }
 
@@ -21,9 +22,10 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: LoginScreen()
+        body: Signupscreen()
       ),
     );
   }
