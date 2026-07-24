@@ -7,19 +7,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context,) {
     // int count = ref.watch(counterProvider);
-    return Container(
-      // child: Column(
-      //   children: [
-      //     Text(count.toString()),
-      //     TextButton(onPressed: () {
-      //       ref.read(counterProvider.notifier).state*=2;
-      //     }, child: Text("add")),
-      //     TextButton(onPressed: () {
-      //       ref.read(counterProvider.notifier).state--;
-      //     }, child: Text("minuse")),
-      //   ],
-      // )
-    
+    return Scaffold(
+      appBar: Tab(child: Text("welocm to the app"),),
     );
   }
 }

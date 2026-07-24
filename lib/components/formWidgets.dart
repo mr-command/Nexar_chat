@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nexar_platform/logic/providers.dart';
+import 'package:nexar_platform/services/api_services.dart';
+import 'package:nexar_platform/services/providers.dart';
 
 Widget TextfieldWidget(TextEditingController controller,String hint){
   return Container(
@@ -16,7 +17,7 @@ Widget TextfieldWidget(TextEditingController controller,String hint){
         filled: true,
         label: Text(hint),
         
-        focusColor: Colors.cyanAccent[300],
+        // focusColor: Colors.cyanAccent[300],
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.elliptical(24, 24)),
           borderSide: BorderSide(color: Colors.grey[100]!)
@@ -59,7 +60,7 @@ Widget PasswordfieldWidget(TextEditingController controller,String hint){
           borderSide: BorderSide(color: Colors.grey[400]!)
         ),
         label: Text(hint),
-        focusColor: Colors.cyanAccent[300],
+        // focusColor: Colors.cyanAccent[300],
         
         border: UnderlineInputBorder(borderSide: BorderSide(color: Colors.red,width: 2)),
         prefixIcon: Icon(Icons.lock,size: 16,)
@@ -68,9 +69,11 @@ Widget PasswordfieldWidget(TextEditingController controller,String hint){
   );
 }
 
-Widget submitFormbtn(){
+Widget submitFormbtn(TextEditingController username,TextEditingController email, TextEditingController password){
   return TextButton(
-    onPressed: (){},
+    onPressed: (){
+      registerUser(username.text, email.text, password.text);
+    },
      style: TextButton.styleFrom(
       backgroundColor: Colors.black,
       foregroundColor: Colors.white,

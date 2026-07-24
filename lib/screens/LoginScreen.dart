@@ -38,7 +38,7 @@ class LoginScreen extends StatelessWidget {
                       children: [Text("Forgot password",style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold),)],
                     ),
                     SizedBox(height: 40,),
-                    submitFormbtn(),
+                    submitFormbtn(username,password,password),
                     SizedBox(height: 16,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

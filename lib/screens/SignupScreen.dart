@@ -3,6 +3,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:nexar_platform/components/formWidgets.dart';
 import 'package:nexar_platform/screens/LoginScreen.dart';
+import 'package:nexar_platform/services/api_services.dart';
 
 class Signupscreen extends StatelessWidget {
   const Signupscreen({super.key});
@@ -11,8 +12,8 @@ class Signupscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
   final TextEditingController username = TextEditingController();
+  final TextEditingController email = TextEditingController();
   final TextEditingController password = TextEditingController();
-  final TextEditingController cpassword = TextEditingController();
     return Scaffold(
       body: Center(
         
@@ -29,20 +30,25 @@ class Signupscreen extends StatelessWidget {
               height: 600,
               padding: EdgeInsets.all(16),
               child: Form(
+
                 child: Column(
                   children: [
                     TextfieldWidget(username, "username"),
                     SizedBox(height: 40,),
-                    PasswordfieldWidget(password, "password",),
+
+                    TextfieldWidget(email, "email",),
+                    
                     SizedBox(height: 40,),
-                    PasswordfieldWidget(cpassword, "reapeat paasword",),
+
+                    PasswordfieldWidget(password, "password",),
+                    
                     // SizedBox(height: 16,),
                     // Row(
                     //   mainAxisAlignment: MainAxisAlignment.end,
                     //   children: [Text("Forgot password",style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold),)],
                     // ),
                     SizedBox(height: 40,),
-                    submitFormbtn(),
+                    submitFormbtn(username,email,password),
                     SizedBox(height: 16,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -50,6 +56,7 @@ class Signupscreen extends StatelessWidget {
                         Text("Alraady have an account?",style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold),),
                         TextButton(
                           onPressed: (){
+                            
                             Get.to(LoginScreen());
                           },
                           child: Text("Login",style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold,color: Colors.grey),)
